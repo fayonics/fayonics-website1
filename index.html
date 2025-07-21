@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fayonics - Engineering Intelligent Embedded Solutions</title>
+    <meta name="description" content="Global embedded systems solutions company providing intelligent IoT, automotive, and industrial automation services worldwide.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h2>Fayonics</h2>
+            </div>
+            <div class="navbar-menu">
+                <a href="#home" class="navbar-link active">Home</a>
+                <a href="#services" class="navbar-link">Services</a>
+                <a href="#industries" class="navbar-link">Industries</a>
+                <a href="#case-studies" class="navbar-link">Case Studies</a>
+                <a href="#about" class="navbar-link">About</a>
+                <a href="#contact" class="navbar-link">Contact</a>
+                <a href="#admin" class="navbar-link admin-link">Admin</a>
+            </div>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Engineering Intelligent Embedded Solutions</h1>
+                        <p class="hero-subtitle">Transforming ideas into innovative embedded systems that drive the future of IoT, automotive, and industrial automation across the globe.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn--primary" onclick="navigateTo('contact')">Get Started</button>
+                            <button class="btn btn--outline" onclick="navigateTo('services')">Our Services</button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/999e18bf-9795-41cf-bd39-1eca44faca66.png" alt="Global embedded systems expertise" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive embedded solutions tailored to your industry needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3>Custom Embedded Design</h3>
+                        <p>End-to-end embedded system design from concept to production, including hardware and firmware development.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <h3>IoT Solutions</h3>
+                        <p>Connected device development with cloud integration, data analytics, and remote monitoring capabilities.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚗</div>
+                        <h3>Automotive Systems</h3>
+                        <p>Advanced automotive electronics including ADAS, infotainment systems, and vehicle connectivity solutions.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏭</div>
+                        <h3>Industrial Automation</h3>
+                        <p>Smart factory solutions, process control systems, and industrial IoT implementations for enhanced efficiency.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📡</div>
+                        <h3>Wireless Communication</h3>
+                        <p>RF design, wireless protocols implementation, and antenna design for various communication standards.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔬</div>
+                        <h3>Prototyping & Testing</h3>
+                        <p>Rapid prototyping, validation testing, and compliance certification for embedded products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section id="industries" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Industries We Serve</h2>
+                    <p>Delivering specialized embedded solutions across diverse sectors</p>
+                </div>
+                <div class="industries-grid">
+                    <div class="industry-card">
+                        <h3>Healthcare & Medical</h3>
+                        <p>Medical device development, patient monitoring systems, and regulatory compliant solutions.</p>
+                        <div class="industry-tags">
+                            <span class="tag">FDA Compliance</span>
+                            <span class="tag">ISO 13485</span>
+                        </div>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Automotive</h3>
+                        <p>ADAS systems, ECU development, and next-generation vehicle technologies.</p>
+                        <div class="industry-tags">
+                            <span class="tag">ISO 26262</span>
+                            <span class="tag">AUTOSAR</span>
+                        </div>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Industrial</h3>
+                        <p>Factory automation, robotics control, and smart manufacturing solutions.</p>
+                        <div class="industry-tags">
+                            <span class="tag">Industry 4.0</span>
+                            <span class="tag">IEC 61508</span>
+                        </div>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Consumer Electronics</h3>
+                        <p>Smart home devices, wearables, and connected appliance development.</p>
+                        <div class="industry-tags">
+                            <span class="tag">Low Power</span>
+                            <span class="tag">BLE/WiFi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Case Studies</h2>
+                    <p>Real-world success stories from our embedded projects</p>
+                </div>
+                <div class="case-studies-grid">
+                    <div class="case-study-card">
+                        <div class="case-study-header">
+                            <h3>Smart Factory IoT System</h3>
+                            <span class="status status--success">Completed</span>
+                        </div>
+                        <p>Developed a comprehensive IoT solution for a manufacturing facility, resulting in 35% efficiency improvement and predictive maintenance capabilities.</p>
+                        <div class="case-study-details">
+                            <span class="detail"><strong>Industry:</strong> Manufacturing</span>
+                            <span class="detail"><strong>Duration:</strong> 8 months</span>
+                            <span class="detail"><strong>Technology:</strong> ARM Cortex-M, LoRaWAN, Cloud Analytics</span>
+                        </div>
+                    </div>
+                    <div class="case-study-card">
+                        <div class="case-study-header">
+                            <h3>Automotive ADAS Module</h3>
+                            <span class="status status--success">Completed</span>
+                        </div>
+                        <p>Designed and implemented an Advanced Driver Assistance System module for collision avoidance and lane keeping assistance.</p>
+                        <div class="case-study-details">
+                            <span class="detail"><strong>Industry:</strong> Automotive</span>
+                            <span class="detail"><strong>Duration:</strong> 12 months</span>
+                            <span class="detail"><strong>Technology:</strong> Automotive MCU, Computer Vision, CAN Bus</span>
+                        </div>
+                    </div>
+                    <div class="case-study-card">
+                        <div class="case-study-header">
+                            <h3>Medical Device Monitoring</h3>
+                            <span class="status status--info">In Progress</span>
+                        </div>
+                        <p>Creating a real-time patient monitoring system with wireless connectivity and FDA-compliant data security.</p>
+                        <div class="case-study-details">
+                            <span class="detail"><strong>Industry:</strong> Healthcare</span>
+                            <span class="detail"><strong>Duration:</strong> 14 months</span>
+                            <span class="detail"><strong>Technology:</strong> Ultra-low Power MCU, Bluetooth 5.0, AES Encryption</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section section-alt">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Fayonics</h2>
+                        <p>Fayonics is a global leader in embedded systems engineering, specializing in intelligent solutions that bridge the physical and digital worlds. Our team of experienced engineers combines deep technical expertise with innovative thinking to deliver cutting-edge embedded products.</p>
+                        <p>Founded with the vision of making embedded technology accessible and impactful, we work with companies worldwide to transform their ideas into market-ready products. From initial concept through production support, we're your trusted partner in embedded innovation.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h3>50+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="stat">
+                                <h3>15+</h3>
+                                <p>Countries Served</p>
+                            </div>
+                            <div class="stat">
+                                <h3>10+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-features">
+                        <h3>Why Choose Fayonics?</h3>
+                        <ul class="feature-list">
+                            <li>✓ Global expertise in embedded systems</li>
+                            <li>✓ End-to-end project management</li>
+                            <li>✓ Industry-leading compliance standards</li>
+                            <li>✓ Rapid prototyping capabilities</li>
+                            <li>✓ 24/7 technical support</li>
+                            <li>✓ Scalable solutions for any project size</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to start your embedded project? Contact us for a consultation.</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <strong>Email:</strong> sales@fayonics.com
+                        </div>
+                        <div class="contact-item">
+                            <strong>Response Time:</strong> We typically respond within 24-48 hours
+                        </div>
+                        <div class="contact-item">
+                            <strong>Global Reach:</strong> Serving clients worldwide with local expertise
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company</label>
+                            <input type="text" id="company" name="company" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="project" class="form-label">Project Type</label>
+                            <select id="project" name="project" class="form-control">
+                                <option value="">Select a project type</option>
+                                <option value="iot">IoT Development</option>
+                                <option value="automotive">Automotive Systems</option>
+                                <option value="industrial">Industrial Automation</option>
+                                <option value="medical">Medical Devices</option>
+                                <option value="consumer">Consumer Electronics</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" required placeholder="Tell us about your project requirements, timeline, and objectives..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Login Section -->
+        <section id="admin" class="section admin-section">
+            <div class="container">
+                <div class="admin-login-container">
+                    <div class="admin-login-form">
+                        <h2>Admin Portal</h2>
+                        <form id="adminLoginForm">
+                            <div class="form-group">
+                                <label for="adminPassword" class="form-label">Password</label>
+                                <input type="password" id="adminPassword" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+                        </form>
+                        <div id="adminError" class="admin-error hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section id="admin-dashboard" class="section admin-section hidden">
+            <div class="container">
+                <div class="admin-header">
+                    <h2>Admin Dashboard</h2>
+                    <button class="btn btn--outline" onclick="adminLogout()">Logout</button>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Total Leads</h3>
+                        <p class="stat-number" id="totalLeads">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>This Month</h3>
+                        <p class="stat-number" id="monthlyLeads">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Site Visits</h3>
+                        <p class="stat-number">2,847</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="dashboard-header">
+                        <h3>Contact Form Submissions</h3>
+                        <button class="btn btn--primary" onclick="exportLeadsCSV()">Export CSV</button>
+                    </div>
+                    <div class="leads-table-container">
+                        <table class="leads-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Company</th>
+                                    <th>Project Type</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leadsTableBody">
+                                <!-- Leads will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div id="noLeadsMessage" class="no-leads hidden">
+                            <p>No leads found. Contact form submissions will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Fayonics</h3>
+                    <p>Engineering intelligent embedded solutions for a connected world.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#services">Services</a>
+                    <a href="#industries">Industries</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>sales@fayonics.com</p>
+                    <p>Global embedded systems solutions</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fayonics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
