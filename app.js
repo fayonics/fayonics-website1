@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
       menu.classList.toggle('active');
     });
   }
+  
+  // Initialize the application
+  initializeApp();
 });
 
 // Initialize the application
@@ -211,29 +214,46 @@ function initializeAdminLogin() {
     }
 }
 
+// Check admin authentication
+function checkAdminAuth() {
+    const token = sessionStorage.getItem('fayonicsAdminToken');
+    const adminLinks = document.querySelectorAll('.admin-link');
+    if (token && token.startsWith('authenticated_')) {
+        // Show admin link
+        adminLinks.forEach(link => link.style.display = 'block');
+    } else {
+        // Hide admin link
+        adminLinks.forEach(link => link.style.display = 'none');
+    }
+}
+
 // Handle admin login
 function handleAdminLogin() {
     const passwordInput = document.getElementById('adminPassword');
     const errorDiv = document.getElementById('adminError');
     const password = passwordInput.value.trim();
-    
+
     // Clear previous errors
     errorDiv.classList.add('hidden');
     errorDiv.textContent = '';
-    
+
     // Check password (demo password: admin123)
     if (password === 'admin123') {
         // Store session token
         sessionStorage.setItem('fayonicsAdminToken', 'authenticated_' + Date.now());
-        
+
+        // Show admin link
+        const adminLinks = document.querySelectorAll('.admin-link');
+        adminLinks.forEach(link => link.style.display = 'block');
+
         // Clear password
         passwordInput.value = '';
-        
+
         // Show dashboard
         navigateTo('admin-dashboard');
         updateDashboardStats();
         loadLeadsTable();
-        
+
         showNotification('Login successful! Welcome to the admin dashboard.', 'success');
     } else {
         // Show error
@@ -243,22 +263,12 @@ function handleAdminLogin() {
     }
 }
 
-// Check admin authentication
-function checkAdminAuth() {
-    const token = sessionStorage.getItem('fayonicsAdminToken');
-    const adminSection = document.getElementById('admin');
-    const dashboardSection = document.getElementById('admin-dashboard');
-    
-    if (token && token.startsWith('authenticated_')) {
-        // User is authenticated, show admin link
-        const adminLinks = document.querySelectorAll('.admin-link');
-        adminLinks.forEach(link => link.style.display = 'block');
-    }
-}
-
 // Admin logout
 function adminLogout() {
     sessionStorage.removeItem('fayonicsAdminToken');
+    // Hide admin link on logout
+    const adminLinks = document.querySelectorAll('.admin-link');
+    adminLinks.forEach(link => link.style.display = 'none');
     navigateTo('home');
     showNotification('Logged out successfully.', 'info');
 }
@@ -526,3 +536,14 @@ window.navigateTo = navigateTo;
 window.adminLogout = adminLogout;
 window.exportLeadsCSV = exportLeadsCSV;
 window.toggleMobileNav = toggleMobileNav;
+
+// Admin link (initially hidden, shown after admin login)
+const adminLink = document.createElement('a');
+adminLink.href = '#admin';
+adminLink.className = 'navbar-link admin-link';
+adminLink.style.display = 'none';
+adminLink.textContent = 'Admin';
+document.querySelector('.navbar-menu').appendChild(adminLink);
+
+// Show admin link if authenticated
+checkAdminAuth();
