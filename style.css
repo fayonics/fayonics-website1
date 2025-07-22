@@ -783,8 +783,7 @@ select.form-control {
 
 .navbar-menu {
   display: flex;
-  gap: var(--space-24);
-  align-items: center;
+  gap: 1.5rem;
 }
 
 .navbar-link {
@@ -833,10 +832,24 @@ select.form-control {
 @media (max-width: 768px) {
   .navbar-menu {
     display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-top: 1px solid #eee;
   }
-  
-  .navbar-toggle {
+  .navbar-menu.active {
     display: flex;
+  }
+  .navbar-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
   }
 }
 
@@ -1285,10 +1298,8 @@ select.form-control {
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-32);
-  margin-bottom: var(--space-24);
+  display: flex;
+  gap: 2rem;
 }
 
 .footer-brand h3 {
@@ -1334,15 +1345,6 @@ select.form-control {
   margin: 0;
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
-}
-
-/* Utility classes */
-.hidden {
-  display: none !important;
-}
-
-.visible {
-  display: block !important;
 }
 
 /* Responsive Design */
@@ -1420,4 +1422,107 @@ select:focus-visible {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Responsive Navbar */
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-top: 1px solid #eee;
+  }
+  .navbar-menu.active {
+    display: flex;
+  }
+  .navbar-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
+}
+
+/* Responsive Grids */
+.services-grid,
+.industries-grid,
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 900px) {
+  .services-grid,
+  .industries-grid,
+  .case-studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .services-grid,
+  .industries-grid,
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Footer */
+.footer-content {
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-map iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}
+
+/* Responsive Forms */
+.contact-form,
+.admin-login-form {
+  width: 100%;
+  max-width: 400px;
+}
+@media (max-width: 600px) {
+  .contact-form,
+  .admin-login-form {
+    max-width: 100%;
+  }
+}
+
+/* Responsive Table */
+.leads-table-container {
+  overflow-x: auto;
+}
+.leads-table {
+  min-width: 600px;
+  width: 100%;
+}
+
+/* General Section Padding */
+.section {
+  padding: 2rem 1rem;
+}
+@media (max-width: 600px) {
+  .section {
+    padding: 1rem 0.5rem;
+  }
 }
