@@ -21,7 +21,7 @@
                 <a href="#case-studies" class="navbar-link">Case Studies</a>
                 <a href="#about" class="navbar-link">About</a>
                 <a href="#contact" class="navbar-link">Contact</a>
-                <a href="#admin" class="navbar-link admin-link">Admin</a>
+                <a href="#admin" class="navbar-link admin-link" style="display:none;">Admin</a>
             </div>
             <button class="navbar-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -280,74 +280,48 @@
         </section>
 
         <!-- Admin Login Section -->
-        <section id="admin" class="section admin-section">
-            <div class="container">
-                <div class="admin-login-container">
-                    <div class="admin-login-form">
-                        <h2>Admin Portal</h2>
-                        <form id="adminLoginForm">
-                            <div class="form-group">
-                                <label for="adminPassword" class="form-label">Password</label>
-                                <input type="password" id="adminPassword" class="form-control" required>
-                            </div>
-                            <button type="submit" class="btn btn--primary btn--full-width">Login</button>
-                        </form>
-                        <div id="adminError" class="admin-error hidden"></div>
-                    </div>
+        <section id="admin" class="section admin-section hidden">
+          <div class="container">
+            <div class="admin-login-container">
+              <form class="admin-login-form" id="adminLoginForm">
+                <h2>Admin Login</h2>
+                <div class="form-group">
+                  <label for="adminPassword" class="form-label">Password</label>
+                  <input type="password" id="adminPassword" class="form-control" required />
                 </div>
+                <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+                <div id="adminError" class="admin-error hidden"></div>
+              </form>
             </div>
+          </div>
         </section>
 
         <!-- Admin Dashboard Section -->
         <section id="admin-dashboard" class="section admin-section hidden">
-            <div class="container">
-                <div class="admin-header">
-                    <h2>Admin Dashboard</h2>
-                    <button class="btn btn--outline" onclick="adminLogout()">Logout</button>
-                </div>
-                
-                <div class="dashboard-stats">
-                    <div class="stat-card">
-                        <h3>Total Leads</h3>
-                        <p class="stat-number" id="totalLeads">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>This Month</h3>
-                        <p class="stat-number" id="monthlyLeads">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Site Visits</h3>
-                        <p class="stat-number">2,847</p>
-                    </div>
-                </div>
-
-                <div class="dashboard-content">
-                    <div class="dashboard-header">
-                        <h3>Contact Form Submissions</h3>
-                        <button class="btn btn--primary" onclick="exportLeadsCSV()">Export CSV</button>
-                    </div>
-                    <div class="leads-table-container">
-                        <table class="leads-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Company</th>
-                                    <th>Project Type</th>
-                                    <th>Message</th>
-                                </tr>
-                            </thead>
-                            <tbody id="leadsTableBody">
-                                <!-- Leads will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                        <div id="noLeadsMessage" class="no-leads hidden">
-                            <p>No leads found. Contact form submissions will appear here.</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="container">
+            <div class="admin-header">
+              <h2>Admin Dashboard</h2>
+              <button class="btn btn--secondary" onclick="adminLogout()">Logout</button>
             </div>
+            <div class="dashboard-stats">
+              <div class="stat-card">
+                <h3>Total Leads</h3>
+                <div class="stat-number" id="totalLeads">0</div>
+              </div>
+              <div class="stat-card">
+                <h3>New Messages</h3>
+                <div class="stat-number" id="newMessages">0</div>
+              </div>
+            </div>
+            <div class="dashboard-content">
+              <div class="dashboard-header">
+                <h3>Leads</h3>
+              </div>
+              <div class="leads-table-container" id="leadsTableContainer">
+                <!-- Leads table will be populated by JS -->
+              </div>
+            </div>
+          </div>
         </section>
     </main>
 
