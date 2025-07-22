@@ -34,22 +34,9 @@ function initializeNavigation() {
             navigateTo(targetId);
         });
     });
-    
-    // Handle mobile navigation toggle
-    const navToggle = document.querySelector('.navbar-toggle');
-    const navMenu = document.querySelector('.navbar-menu');
-    
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-    }
-    
-    // Handle scroll to update active nav item
-    window.addEventListener('scroll', debounce(updateActiveNavItem, 100));
-    
-    // Show home section by default
-    navigateTo('home');
+
+    // Show "about" section by default (change to your preferred section)
+    navigateTo('about');
 }
 
 // Navigate to specific section
