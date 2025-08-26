@@ -833,6 +833,16 @@ select.form-control {
 @media (max-width: 768px) {
   .navbar-menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1000;
+  }
+  .navbar-menu.mobile-active {
+    display: flex;
   }
   
   .navbar-toggle {
