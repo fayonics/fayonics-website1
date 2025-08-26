@@ -107,6 +107,51 @@ function initializeContactForm() {
     }
 }
 
+/* Responsive Contact Form */
+.contact-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  .contact-form .form-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* WhatsApp button style (optional) */
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-whatsapp:hover {
+  background: #1ebe5b;
+}
+
 // Handle contact form submission
 function handleContactFormSubmission() {
     const form = document.getElementById('contactForm');
@@ -521,3 +566,13 @@ window.navigateTo = navigateTo;
 window.adminLogout = adminLogout;
 window.exportLeadsCSV = exportLeadsCSV;
 window.toggleMobileNav = toggleMobileNav;
+
+// In your contact section
+<button
+  type="button"
+  class="btn btn-whatsapp"
+  onclick="window.open('https://wa.me/918940569561','_blank')"
+>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:20px;vertical-align:middle;">
+  Chat on WhatsApp
+</button>
