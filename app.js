@@ -144,10 +144,10 @@ function handleContactFormSubmission() {
     // Save to localStorage
     saveLeadToStorage(lead);
     
-    // Create mailto link as fallback
-    const subject = encodeURIComponent(`New Project Inquiry from ${name}`);
-    const body = encodeURIComponent(`
-Name: ${name}
+    // WhatsApp integration
+    const whatsappNumber = '918940569561'; // Country code + number, no plus sign
+    const whatsappMessage = encodeURIComponent(
+      `Name: ${name}
 Email: ${email}
 Company: ${lead.company}
 Project Type: ${lead.project}
@@ -156,16 +156,15 @@ Message:
 ${message}
 
 --
-This inquiry was submitted through the Fayonics website contact form.
-    `);
+This inquiry was submitted through the Fayonics website contact form.`
+    );
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     
-    const mailtoLink = `mailto:sales@fayonics.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.open(mailtoLink, '_blank');
+    // Open WhatsApp chat
+    window.open(whatsappLink, '_blank');
     
     // Show success message
-    showNotification('Thank you for your inquiry! We\'ll respond within 24-48 hours. Your default email client should open to send the message.', 'success');
+    showNotification('Thank you for your inquiry! WhatsApp will open to send your message.', 'success');
     
     // Reset form
     form.reset();
