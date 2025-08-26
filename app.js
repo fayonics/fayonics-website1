@@ -15,30 +15,33 @@ function initializeApp() {
 // Navigation functionality
 function initializeNavigation() {
     const navLinks = document.querySelectorAll('.navbar-link');
-    const sections = document.querySelectorAll('.section');
-    
+    const navToggle = document.querySelector('.navbar-toggle');
+    const navMenu = document.querySelector('.navbar-menu');
+
     // Handle navigation clicks
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             navigateTo(targetId);
+
+            // Close mobile menu after navigation
+            if (navMenu && navMenu.classList.contains('mobile-active')) {
+                navMenu.classList.remove('mobile-active');
+            }
         });
     });
-    
+
     // Handle mobile navigation toggle
-    const navToggle = document.querySelector('.navbar-toggle');
-    const navMenu = document.querySelector('.navbar-menu');
-    
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+            navMenu.classList.toggle('mobile-active');
         });
     }
-    
+
     // Handle scroll to update active nav item
     window.addEventListener('scroll', debounce(updateActiveNavItem, 100));
-    
+
     // Show home section by default
     navigateTo('home');
 }
@@ -567,7 +570,24 @@ window.adminLogout = adminLogout;
 window.exportLeadsCSV = exportLeadsCSV;
 window.toggleMobileNav = toggleMobileNav;
 
-// In your contact section
+/* Example for mobile menu */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1000;
+  }
+  .navbar-menu.mobile-active {
+    display: flex;
+  }
+}
+
+/* In your contact section */
 <button
   type="button"
   class="btn btn-whatsapp"
