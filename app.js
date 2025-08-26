@@ -576,3 +576,14 @@ window.toggleMobileNav = toggleMobileNav;
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:20px;vertical-align:middle;">
   Chat on WhatsApp
 </button>
+
+<!-- Hero Section Button -->
+<button class="btn btn--outline" onclick="navigateTo('services')">Our Services</button>
+
+<!-- Services Section -->
+<section id="services" class="section">
+  <div class="container">
+    <h2>Our Services</h2>
+    <!-- Your services content here -->
+  </div>
+</section>
